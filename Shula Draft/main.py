@@ -3,6 +3,7 @@ from tkinter import Tk, Canvas, Button, PhotoImage, Frame, Entry, Label
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Sol\Desktop\DynamicsCalcu\build\assets\frame0")
+# ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\lenovo\OneDrive\Desktop\Mercado_WS\DynamicsCalcu\build\assets\frame0")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -105,7 +106,7 @@ canvas.place(x=0, y=0)
 header = Label(main_menu, text="Dynamics Calculator", font=("Arial", 24, "bold"), bg="#9F9F9F")
 header.pack(pady=20)
 
-instruction = Label(main_menu, text="Please choose one of the following options:", font=("Arial", 14), bg="#9F9F9F")
+instruction = Label(main_menu, text="Please choose one of the following options:", font=("Arial", 14), bg="#9F9F9F", pady=25)
 instruction.pack(pady=10)
 
 # Styling for buttons to match the design
@@ -150,17 +151,17 @@ go_back_button_page1 = Button(
     command=go_back,
     **button_style
 )
-go_back_button_page1.pack(pady=10)
+go_back_button_page1.pack(pady=(50, 30))
 
 mass_label = Label(page1, text="Mass (kg):", bg="#9F9F9F", font=("Arial", 12))
 mass_label.pack(pady=5)
 mass_entry = Entry(page1)
-mass_entry.pack(pady=5)
+mass_entry.pack(pady=(5, 20))
 
 acceleration_label = Label(page1, text="Acceleration (m/s^2):", bg="#9F9F9F", font=("Arial", 12))
 acceleration_label.pack(pady=5)
 acceleration_entry = Entry(page1)
-acceleration_entry.pack(pady=5)
+acceleration_entry.pack(pady=(5, 30))
 
 calculate_button = Button(page1, text="Calculate Force", command=calculate_force, **button_style)
 calculate_button.pack(pady=10)
@@ -175,12 +176,12 @@ go_back_button_page2 = Button(
     command=go_back,
     **button_style
 )
-go_back_button_page2.pack(pady=10)
+go_back_button_page2.pack(pady=(20, 10))
 
 m1_label = Label(page2, text="Mass of object 1 (kg):", bg="#9F9F9F", font=("Arial", 12))
-m1_label.pack(pady=5)
+m1_label.pack(pady=(10, 5))
 m1_entry = Entry(page2)
-m1_entry.pack(pady=5)
+m1_entry.pack(pady=(10, 5))
 
 v1_label = Label(page2, text="Initial velocity of object 1 (m/s):", bg="#9F9F9F", font=("Arial", 12))
 v1_label.pack(pady=5)
@@ -193,9 +194,9 @@ m2_entry = Entry(page2)
 m2_entry.pack(pady=5)
 
 v2_label = Label(page2, text="Initial velocity of object 2 (m/s):", bg="#9F9F9F", font=("Arial", 12))
-v2_label.pack(pady=5)
+v2_label.pack(pady=(5, 10))
 v2_entry = Entry(page2)
-v2_entry.pack(pady=5)
+v2_entry.pack(pady=(5, 10))
 
 calculate_button_page2 = Button(page2, text="Calculate Final Velocities", command=calculate_elastic_collision, **button_style)
 calculate_button_page2.pack(pady=10)
@@ -210,12 +211,12 @@ go_back_button_page3 = Button(
     command=go_back,
     **button_style
 )
-go_back_button_page3.pack(pady=10)
+go_back_button_page3.pack(pady=(20, 10))
 
 m1_label_page3 = Label(page3, text="Mass of object 1 (kg):", bg="#9F9F9F", font=("Arial", 12))
-m1_label_page3.pack(pady=5)
+m1_label_page3.pack(pady=(10, 5))
 m1_entry_page3 = Entry(page3)
-m1_entry_page3.pack(pady=5)
+m1_entry_page3.pack(pady=(10, 5))
 
 v1_label_page3 = Label(page3, text="Initial velocity of object 1 (m/s):", bg="#9F9F9F", font=("Arial", 12))
 v1_label_page3.pack(pady=5)
@@ -228,9 +229,9 @@ m2_entry_page3 = Entry(page3)
 m2_entry_page3.pack(pady=5)
 
 v2_label_page3 = Label(page3, text="Initial velocity of object 2 (m/s):", bg="#9F9F9F", font=("Arial", 12))
-v2_label_page3.pack(pady=5)
+v2_label_page3.pack(pady=(5, 10))
 v2_entry_page3 = Entry(page3)
-v2_entry_page3.pack(pady=5)
+v2_entry_page3.pack(pady=(5, 10))
 
 calculate_button_page3 = Button(page3, text="Calculate Final Velocity", command=calculate_inelastic_collision, **button_style)
 calculate_button_page3.pack(pady=10)
